@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: red;
+      }
+
+      input[type='text'] {
+        padding: 0.5rem;
+        border: 2px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Greet App</h1>
+    <form id="form">
+      <label>
+        Enter your name:
+        <input type="text" />
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="display"></div>
+
+    <script>
+      console.log('Hello Vidu, Welcome To Js!');
+
+      let form = document.getElementById('form');
+      let display = document.getElementById('display');
+      form.addEventListener('submit', e => {
+        e.preventDefault();
+        let name = e.target[0].value;
+        display.textContent = `Hello ${name}! The time is ${new Date()}`;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+@font-face {
+  font-family: 'Kbdunktank';
+  src: url('./Kbdunktank-A5ag.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KBFunHouse';
+  src: url('./Kbfunhouse-K8Bo.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KBJellybean';
+  src: url('./Kbjellybean-739V.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Fira Code', monospace;
+}
+
+select {
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #333;
+  color: #ccc;
+}
+
+label {
+  user-select: none;
+}
+
+label:has(input[disabled]) {
+  color: red;
+}
+
+pre {
+  white-space: pre-wrap;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+#display {
+  font-family: monospace;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+#display,
+#pre-display {
+  padding: 20px;
+  border: 5px solid #333;
+  border-radius: 10px;
+}
+
+.byte {
+  margin: 2px 5px;
+  padding: 2px;
+  border: 1px solid forestgreen;
+}
+
+.byte-binary.hidden {
+  display: none;
+}
+
+.byte-dec.hidden {
+  display: none;
+}
+
+.byte-dec {
+  background-color: orchid;
+}
+
+.byte-ascii {
+  background-color: aqua;
+}

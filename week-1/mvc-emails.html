@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MVC</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .email {
+        margin: 20px;
+        padding: 10px;
+        border: 3px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- PRESENTATION/VIEW/DISPLAY 👇 -->
+    <main>
+      <h1>My emails!</h1>
+      <button onclick='render("DESC")'>Sort Date DESC</button>
+      <button onclick='render("ASC")'>Sort Date ASC</button>
+      <div id="display"></div>
+    </main>
+
+    <template id="email-template">
+      <div class="email">
+        <div class="subject">subject</div>
+        <div class="body">body</div>
+        <div class="date">date</div>
+      </div>
+    </template>
+
+    <!-- CONTROLLER/LOGIC 👇 -->
+    <script type="module">
+      window.render = (sort = 'DEFAULT') => {
+        // STORAGE/MODEL/DATA 👇
+        fetch(
+          'https://gist.githubusercontent.com/k26rahul/a55a7385e8cf217a5b474fefa086ac3f/raw/b4df40369b5ef953017350a0104bea59cf082624/data.json'
+        )
+          .then(res => res.json())
+          .then(data => {
+            console.log(data);
+
+            // Sorting logic based on 'sort' parameter
+            if (sort === 'ASC') {
+              data.sort((a, b) => new Date(a.date) - new Date(b.date)); // Ascending order (oldest first)
+            } else if (sort === 'DESC') {
+              data.sort((a, b) => new Date(b.date) - new Date(a.date)); // Descending order (newest first)
+            }
+
+            let emailTemplate = document.getElementById('email-template');
+            let display = document.getElementById('display');
+
+            // Clear previous content
+            display.innerHTML = '';
+
+            data.forEach(({ subject, body, date }) => {
+              let clone = emailTemplate.content.cloneNode(true);
+
+              // Format and display subject in uppercase
+              clone.querySelector('.subject').textContent =
+                subject.toLocaleUpperCase();
+
+              // Display the email body
+              clone.querySelector('.body').textContent = body;
+
+              // Format the date as YYYY-MM-DD
+              let formattedDate = new Date(date).toISOString().split('T')[0];
+              clone.querySelector('.date').textContent = formattedDate;
+
+              // Append the cloned content to the display
+              display.appendChild(clone);
+            });
+          });
+      };
+
+      window.render();
+    </script>
+  </body>
+</html>

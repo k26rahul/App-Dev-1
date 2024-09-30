@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>text-to-binary</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Dots:wght@400..700&family=Fira+Code&family=Indie+Flower&family=Jacquarda+Bastarda+9&family=Kalnia+Glaze:wght@100..700&family=Luckiest+Guy&family=Nabla&family=Nothing+You+Could+Do&family=Rock+Salt&family=Sixtyfour+Convergence&family=Spicy+Rice&family=Sriracha&family=Tangerine:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="controls">
+        <label>
+          preRender
+          <input type="checkbox" name="" id="preRender-checkbox" />
+        </label>
+
+        <label>
+          hideByteBinary
+          <input type="checkbox" name="" id="hideByteBinary-checkbox" />
+        </label>
+
+        <label>
+          hideByteDec
+          <input type="checkbox" name="" id="hideByteDec-checkbox" />
+        </label>
+
+        <label>
+          removeByteStyles
+          <input type="checkbox" name="" id="removeByteStyles-checkbox" />
+        </label>
+
+        <select id="ascii-font-select">
+          <option value="Fira Code, system-ui" selected>
+            Fira Code, system-ui;
+          </option>
+          <option value="Kbdunktank">Kbdunktank</option>
+          <option value="KBFunHouse">KBFunHouse</option>
+          <option value="KBJellybean">KBJellybean</option>
+          <option value="Nabla, system-ui">Nabla, system-ui;</option>
+          <option value="Sixtyfour Convergence, sans-serif">
+            Sixtyfour Convergence, sans-serif;
+          </option>
+          <option value="Bungee Tint, sans-serif">
+            Bungee Tint, sans-serif;
+          </option>
+          <option value="Kalnia Glaze, serif">Kalnia Glaze, serif;</option>
+          <option value="Tangerine, cursive">Tangerine, cursive;</option>
+          <option value="Nothing You Could Do, cursive">
+            Nothing You Could Do, cursive;
+          </option>
+          <option value="Rock Salt, cursive">Rock Salt, cursive;</option>
+          <option value="Sriracha, cursive">Sriracha, cursive;</option>
+          <option value="Luckiest Guy, cursive">Luckiest Guy, cursive;</option>
+          <option value="Indie Flower, cursive">Indie Flower, cursive;</option>
+          <option value="Dancing Script, cursive">
+            Dancing Script, cursive;
+          </option>
+          <option value="Spicy Rice, serif">Spicy Rice, serif;</option>
+          <option value="Jacquarda Bastarda 9, serif">
+            Jacquarda Bastarda 9, serif;
+          </option>
+          <option value="Edu AU VIC WA NT Dots, cursive">
+            Edu AU VIC WA NT Dots, cursive;
+          </option>
+        </select>
+      </div>
+
+      <h2>display 👇</h2>
+      <div id="display"></div>
+
+      <h2>pre-display 👇</h2>
+      <pre id="pre-display"></pre>
+
+      <template id="byte-template">
+        <div class="byte" style="display: flex">
+          <span class="byte-binary"></span>
+          <span class="byte-dec"></span>
+          <span class="byte-ascii"></span>
+        </div>
+      </template>
+    </main>
+    <footer>
+      <a href="https://mothereff.in/binary-ascii">mothereff.in/binary-ascii</a>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
