@@ -4,8 +4,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        color: green;
+        /* background-color: aqua; */
+      }
+
+      h1 {
+        /* Individual properties */
+        border-width: 5px;
+        border-style: solid;
+        border-color: aqua;
+
+        /* CSS shorthand  */
+        border: 5px solid aqua;
+      }
+
+      h1 {
+        text-shadow: 10px 4px 5px blue;
+      }
+
+      #iitm {
+        color: darkviolet;
+      }
+
+      .iitm {
+        color: blue;
+      }
+
+      div {
+        color: yellow;
+      }
+    </style>
   </head>
   <body>
+    <ol type="a" start="2">
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>item 5</li>
+    </ol>
+    <div id="iitm" class="iitm">IIT Madras</div>
+    <!-- <h1 style="color: green">Vidu is the best!!</h1> -->
+    <!-- <ul type="square">
+      <li>item 1</li>
+      <li>item 2</li>
+    </ul> -->
+
+    <audio controls>
+      <source src="ringtone.mp3" type="audio/mp3" />
+      This is ringtone.
+    </audio>
+
     <label>
       check it
       <input type="checkbox" />
