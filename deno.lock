@@ -1,0 +1,22 @@
+{
+  "version": "3",
+  "packages": {
+    "specifiers": {
+      "npm:cows@^3.0.1": "npm:cows@3.0.1"
+    },
+    "npm": {
+      "cows@3.0.1": {
+        "integrity": "sha512-w0Ar2UVwcaqYGa4jKMrGYMqMmKIokOWkG2WtirgHlWu8UGwyChimNt4YO5xRfKsebWMENJQGb1PiG73BB5nwAQ==",
+        "dependencies": {}
+      }
+    }
+  },
+  "remote": {},
+  "workspace": {
+    "packageJson": {
+      "dependencies": [
+        "npm:cows@^3.0.1"
+      ]
+    }
+  }
+}
