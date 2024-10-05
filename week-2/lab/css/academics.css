@@ -1,0 +1,33 @@
+th,
+td {
+  padding: 5px;
+}
+
+th {
+  background-color: #259e3f;
+}
+
+td {
+  color: white;
+  background-color: black;
+}
+
+body {
+  background-color: #fdfdbb;
+}
+
+div {
+  margin: 20px;
+}
+
+a {
+  color: #ff0000;
+}
+
+span {
+  color: #0000ff;
+}
+
+.footer {
+  text-align: center;
+}

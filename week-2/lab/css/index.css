@@ -1,0 +1,23 @@
+h1 {
+  text-align: center;
+}
+
+body {
+  background-color: #fdfdbb;
+}
+
+div {
+  margin: 20px;
+}
+
+a {
+  color: #ff0000;
+}
+
+span {
+  color: #0000ff;
+}
+
+.footer {
+  text-align: center;
+}
