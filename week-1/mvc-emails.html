@@ -38,7 +38,8 @@
       window.render = (sort = 'DEFAULT') => {
         // STORAGE/MODEL/DATA 👇
         fetch(
-          'https://gist.githubusercontent.com/k26rahul/a55a7385e8cf217a5b474fefa086ac3f/raw/b4df40369b5ef953017350a0104bea59cf082624/data.json'
+          // 'https://gist.githubusercontent.com/k26rahul/a55a7385e8cf217a5b474fefa086ac3f/raw/b4df40369b5ef953017350a0104bea59cf082624/data.json'
+          'https://gist.githubusercontent.com/vidhatrihr/ea46fe64aa10e99bc1d21a5e4b0af43c/raw/e7965830f49c551a78eae502f308f0e7bbc5e860/data.json'
         )
           .then(res => res.json())
           .then(data => {
@@ -61,8 +62,7 @@
               let clone = emailTemplate.content.cloneNode(true);
 
               // Format and display subject in uppercase
-              clone.querySelector('.subject').textContent =
-                subject.toLocaleUpperCase();
+              clone.querySelector('.subject').textContent = subject.toLocaleUpperCase();
 
               // Display the email body
               clone.querySelector('.body').textContent = body;
