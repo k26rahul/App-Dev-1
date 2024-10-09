@@ -1,0 +1,16 @@
+<div>
+  <table>
+    <tr>
+      <th>Student ID</th>
+      <th>Course ID</th>
+      <th>Marks</th>
+    </tr>
+    {% for student_id, course_id, marks in data %}
+    <tr>
+      <td>{{ student_id }}</td>
+      <td>{{ course_id }}</td>
+      <td>{{ marks }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
