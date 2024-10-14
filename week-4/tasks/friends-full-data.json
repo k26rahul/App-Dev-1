@@ -1,1 +1,37 @@
-{"vidu": {"place": "hbh", "state": "ka", "age": 25, "weight": 50, "study": "ba+bs"}, "vishnu": {"place": "hbh", "state": "ka", "age": 12, "weight": 30, "study": "3rd"}, "rahul": {"place": "albd", "state": "up", "age": 21, "weight": 65, "study": "bsc+bs"}, "muskan": {"place": "raipur", "state": "cg", "age": 20, "weight": 55, "study": "bs"}, "cmd": {"place": "albd", "state": "up", "age": 19, "weight": 50, "study": "btech"}, "harikesh": {"place": "albd", "state": "up", "age": 22, "weight": 70, "study": "bsc+bs"}, "dolphin": {"place": "ocean", "state": "earth", "age": 5, "weight": 200, "study": "0"}}
+{
+  "vidu": {
+    "place": "hbh",
+    "state": "ka",
+    "age": 25,
+    "weight": 50,
+    "study": "ba+bs"
+  },
+  "vishnu": {
+    "place": "hbh",
+    "state": "ka",
+    "age": 12,
+    "weight": 30,
+    "study": "3rd"
+  },
+  "rahul": {
+    "place": "albd",
+    "state": "up",
+    "age": 21,
+    "weight": 65,
+    "study": "bsc+bs"
+  },
+  "muskan": {
+    "place": "raipur",
+    "state": "cg",
+    "age": 20,
+    "weight": 55,
+    "study": "bs"
+  },
+  "sanika": {
+    "place": "pune",
+    "state": "mh",
+    "age": 27,
+    "weight": 60,
+    "study": "btech+bs"
+  }
+}
