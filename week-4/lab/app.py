@@ -34,7 +34,7 @@ def get_course_data(course_id):
 
 
 def generate_error_output():
-  return render_template('error_output.j2')
+  return render_template('error_output.html')
 
 
 def generate_student_output(student_id):
@@ -44,7 +44,7 @@ def generate_student_output(student_id):
     return generate_error_output()
 
   # https://stackoverflow.com/a/55176881
-  return render_template('student_output.j2', student_data=student_data, total_marks=total_marks)
+  return render_template('student_output.html', student_data=student_data, total_marks=total_marks)
 
 
 def generate_histogram(marks, course_id):
@@ -65,7 +65,8 @@ def generate_course_output(course_id):
   except:
     return generate_error_output()
 
-  return render_template('course_output.j2', avg_marks=avg_marks, max_marks=max_marks)
+  generate_histogram(marks, course_id)
+  return render_template('course_output.html', avg_marks=avg_marks, max_marks=max_marks)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -73,12 +74,12 @@ def root():
   if request.method == 'GET':
     return render_template('index.html')
   elif request.method == 'POST':
-    student_or_course = request.form.get('student_or_course')
-    id = request.form.get('id')
-    if student_or_course == 'student':
-      return generate_student_output(id)
-    elif student_or_course == 'course':
-      return generate_course_output(f' {id}')
+    ID = request.form.get('ID')
+    id_value = request.form.get('id_value')
+    if ID == 'student_id':
+      return generate_student_output(id_value)
+    elif ID == 'course_id':
+      return generate_course_output(f' {id_value}')
     else:
       return generate_error_output()
 
