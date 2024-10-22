@@ -27,11 +27,18 @@
     "weight": 55,
     "study": "bs"
   },
-  "sanika": {
-    "place": "pune",
-    "state": "mh",
-    "age": 27,
-    "weight": 60,
-    "study": "btech+bs"
+  "cmd": {
+    "place": "albd",
+    "state": "up",
+    "age": 19,
+    "weight": 50,
+    "study": "btech"
+  },
+  "harikesh": {
+    "place": "albd",
+    "state": "up",
+    "age": 22,
+    "weight": 70,
+    "study": "bsc+bs"
   }
 }
