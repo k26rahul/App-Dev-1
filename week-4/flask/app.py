@@ -36,13 +36,24 @@ def add(a, b):
 @app.route('/calc/<op>/<a>/<b>')
 def calc(op, a, b):
   if op == 'add':
-    return str(int(a) + int(b))
+    result = int(a) + int(b)
   elif op == 'minus':
-    return str(int(a) - int(b))
+    result = int(a) - int(b)
   elif op == 'mult':
-    return str(int(a) * int(b))
+    result = int(a) * int(b)
   elif op == 'div':
-    return str(int(a) / int(b))
+    result = int(a) / int(b)
+  elif op == 'power':
+    result = int(a) ** int(b)
+  return render_template('calc.html', op=op, a=a, b=b, result=result)
+  # if op == 'add':
+  #   return f'<h1 style="color: blue">add {a}, {b}; result = <span style="color: green">{int(a) + int(b)}</span></h1>'
+  # elif op == 'minus':
+  #   return f'<h1 style="color: blue">minus {a}, {b}; result = <span style="color: green">{int(a) - int(b)}</span></h1>'
+  # elif op == 'mult':
+  #   return f'<h1 style="color: blue">mult {a}, {b}; result = <span style="color: green">{int(a) * int(b)}</span></h1>'
+  # elif op == 'div':
+  #   return f'<h1 style="color: blue">div {a}, {b}; result = <span style="color: green">{int(a) / int(b)}</span></h1>'
 
 
 @app.route('/quiz/1')
