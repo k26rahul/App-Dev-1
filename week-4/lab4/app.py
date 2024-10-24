@@ -1,6 +1,6 @@
 from jinja2 import Template
 import csv
-import sys
+from flask import Flask, request, render_template
 
 
 def get_data():
@@ -30,7 +30,7 @@ def get_course_data(course_id):
 
 def generate_error_html():
   html = open('./templates/error.html').read()
-  open('output.html', 'w+').write(html)
+  return html
 
 
 def generate_student_html(student_id):
@@ -40,7 +40,7 @@ def generate_student_html(student_id):
     return generate_error_html()
   template_string = open('./templates/student.html').read()
   html = Template(template_string).render(student_data=student_data, total_marks=total_marks)
-  open('output.html', 'w+').write(html)
+  return html
 
 
 def generate_histogram(course_id, marks):
@@ -51,7 +51,7 @@ def generate_histogram(course_id, marks):
   plt.title(f'Marks vs Freq for Course ID: {course_id}')
   plt.xlabel('Marks')
   plt.ylabel('Freq')
-  plt.savefig('histogram.png')
+  plt.savefig('static/histogram.png')
 
 
 def generate_course_html(course_id):
@@ -61,15 +61,26 @@ def generate_course_html(course_id):
     return generate_error_html()
   template_string = open('./templates/course.html').read()
   html = Template(template_string).render(avg_marks=avg_marks, max_marks=max_marks)
-  open('output.html', 'w+').write(html)
   generate_histogram(course_id, marks)
+  return html
 
 
-if sys.argv[1] == '-s':
-  student_id = sys.argv[2]
-  generate_student_html(student_id)
-elif sys.argv[1] == '-c':
-  course_id = sys.argv[2]
-  generate_course_html(f' {course_id}')
-else:
-  generate_error_html()
+app = Flask(__name__)
+
+
+@app.route('/', methods=['GET', 'POST'])
+def root():
+  if request.method == 'POST':
+    if request.form['ID'] == 'student_id':
+      student_id = request.form['id_value']
+      return generate_student_html(student_id)
+
+    elif request.form['ID'] == 'course_id':
+      course_id = request.form['id_value']
+      return generate_course_html(f' {course_id}')
+
+  return render_template('index.html')
+
+
+if __name__ == '__main__':
+  app.run(debug=True)

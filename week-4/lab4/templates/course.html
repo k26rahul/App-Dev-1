@@ -8,18 +8,21 @@
   <body>
     <h1>Course Details</h1>
 
-    <table border="1">
+    <table border="1" id="course-details-table">
       <tr>
         <th>Average Marks</th>
         <th>Maximum Marks</th>
       </tr>
 
       <tr>
-        <td>67.2</td>
-        <td>90</td>
+        <td>{{ avg_marks }}</td>
+        <td>{{ max_marks }}</td>
       </tr>
     </table>
 
-    <img src="histogram.png" alt="Marks vs Freq Plot" />
+    <img src="/static/histogram.png" alt="Marks vs Freq Plot" />
+
+    <br />
+    <a href="/">Go back</a>
   </body>
 </html>
