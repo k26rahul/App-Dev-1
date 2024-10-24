@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Calculator</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      form {
+        border: 2px solid brown;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Good Calculator</h1>
+
+    <h2>Easy to use, reliable!</h2>
+
+    <form action="/calc" method="post">
+      <p>Fill this form and submit:</p>
+
+      <label>
+        what to do?? 🤔:
+        <input type="text" name="what_to_do" placeholder="add, minus etc." value="add" />
+      </label>
+      <br /><br />
+
+      <label>
+        first num 😡:
+        <input type="text" name="first_num" placeholder="enter 1st number" value="10" />
+      </label>
+      <br /><br />
+
+      <label>
+        second num 😡:
+        <input type="text" name="second_num" placeholder="enter 2nd number" value="2" />
+      </label>
+      <br /><br />
+
+      <input type="submit" value="Submit the form" />
+    </form>
+  </body>
+</html>
