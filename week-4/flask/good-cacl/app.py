@@ -8,6 +8,18 @@ def index():
   return render_template('index.html')
 
 
+# @app.route('/alien')
+# def alien():
+#   name = request.args['name']
+#   place = request.args['place']
+#   age = request.args['age']
+#   return f'i think u are {name}, and u live in {place}, ur age is {age}'
+  # what_to_do = request.args['what_to_do']
+  # a = int(request.args['first_num'])
+  # b = int(request.args['second_num'])
+  # return f'ok, so, i think you want to do: {what_to_do} for {a} and {b}; do u think i am smart enough to do this??????????'
+
+
 @app.route('/calc', methods=['POST'])
 def calc():
   what_to_do = request.form['what_to_do']
