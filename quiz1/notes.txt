@@ -1,0 +1,111 @@
+1b >>> 2 states = 0, 1
+2b >>> 4 states = 00, 01, 10, 11
+3b >>> 8 states = 000, 001, 010, 011, 100, 101, 110, 111
+
+i need 11 states, 4b >>> 16 states 👇
+
+0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111,
+a b c d A B C D
+
+1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111,
+0 1 " "
+
+Q. 2KB, how many chars??
+Sol.
+
+1 byte = 8 bits
+2 kilobytes = 2000 bytes = 16,000 bits
+
+Q. 16,000 bits, how many chars??
+Ans = 16,000/4
+Ans = 4000
+
+=============
+for key in dict
+
+=============
+A, B
+1 bit: 0/1
+
+1 bit/char
+1000 bits? 1000 chars
+
+A, B, C, D
+2 bit: 4 states: 00, 01, 10, 11
+
+2 bit/char
+1000 bits? 500 chars 
+
+11 chars, capacity?
+1 bit: 0, 1
+2 bits: 00, 01, 10, 11
+3 bits: 000, 001, 010, 011, 100, 101, 110, 111
+4 bits: 0000, 0001, 0010, 0011, 0100, 0101, 0110, 0111,
+        a     b     c     d     A     B     C     D
+
+        1000, 1001, 1010, 1011, 1100, 1101, 1110, 1111
+        0     1     " "
+
+4 bits/char
+2 kilobytes?
+2000 bytes?
+16000 bits? 4000 chars Ans.
+
+=============
+60 km/h = 1 km/m
+40 km travel ~ 40 minutes
+
+120 Mb/s = 15 MB/s
+15*60 MB/m = 900 MB/m
+
+40 minutes travel, consume at 900 MB/m
+total consume = 40 * 900 = 36000 MB
+
+ans. = 36000 MB
+ans. = 36 GB
+
+====
+1700 viewers, 2 GB each
+RAM = 3400 GB = 3400/1000 TB = 3.4 TB
+
+~~~
+server must deal the peak traffic of 1700 users, each taking 2GB mem:
+
+server needs how much RAM so it works smoothly:
+1700 * 2 GB = 3400 GB = 3.4 TB
+~~~
+
+1000 GB per TB
+2000 GB = 2 TB
+3000 GB = 3 TB
+3400 GB = 3.4 TB
+
+====
+12 o clock: 200 viewers
+01 o clock: 500 viewers
+02 o clock: 300 viewers
+03 o clock: 700 viewers [peak hour]
+
+====
+minimum RAM on server = capable of dealing peak hour
+
+====
+165 kmph + 85 kmph = 250 kmph
+total distance = 750 km,
+time taken = 750/250 hrs
+           = 3 hrs
+           = 180 minutes
+
+2 Mb/s = 2/8 MB/s
+= (2/8)*60 MB/m
+= 15 MB/m
+
+180 minutes travel, 15 MB/m
+total consume = 180 * 15 MB
+              = 2700 MB
+              = 2.7 GB
+
+====
+span 1: id
+span 2: class
+span 3: tag
