@@ -4,33 +4,19 @@ from datetime import datetime
 app = Flask(__name__)
 
 
-@app.route('/')
-def root():
-  return f'hello from root, datetime is {datetime.now()}'
-
-
-@app.route('/greet/<name>')
-def greet(name):
-  return f'good morning {name}!'
-
-
-# @app.route('/greet/divya')
-# def greet_divya():
-#   return 'good morning divya!'
-
-
-# @app.route('/greet/vidu')
-# def greet_vidu():
-#   return 'good morning vidu! this route is especially for u'
-
-
-# @app.route('/greet/harikesh')
-# def greet_harikesh():
-#   return 'good morning harikesh! enjoy your route!!'
-
 @app.route('/add/<a>/<b>')
 def add(a, b):
   return str(int(a) + int(b))
+
+
+@app.route('/minus/<a>/<b>')
+def add(a, b):
+  return str(int(a) - int(b))
+
+
+@app.route('/mult/<a>/<b>')
+def add(a, b):
+  return str(int(a) * int(b))
 
 
 @app.route('/calc/<op>/<a>/<b>')
@@ -55,6 +41,30 @@ def calc(op, a, b):
   # elif op == 'div':
   #   return f'<h1 style="color: blue">div {a}, {b}; result = <span style="color: green">{int(a) / int(b)}</span></h1>'
 
+
+@app.route('/')
+def root():
+  return f'hello from root, datetime is {datetime.now()}'
+
+
+@app.route('/greet/<name>')
+def greet(name):
+  return f'good morning {name}!'
+
+
+# @app.route('/greet/divya')
+# def greet_divya():
+#   return 'good morning divya!'
+
+
+# @app.route('/greet/vidu')
+# def greet_vidu():
+#   return 'good morning vidu! this route is especially for u'
+
+
+# @app.route('/greet/harikesh')
+# def greet_harikesh():
+#   return 'good morning harikesh! enjoy your route!!'
 
 @app.route('/quiz/1')
 def quiz1():
