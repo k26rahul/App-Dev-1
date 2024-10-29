@@ -1,27 +1,34 @@
 from flask import Flask, request, render_template, redirect
 
 app = Flask(__name__)
-todos = []
+todos = {
+    1: 'drink water',
+    2: 'eat coconut'
+}
+last_id = 3
 
 
 @app.route('/add', methods=['POST'])
 def add_todo():
+  global last_id
   text = request.form['todo_text']
-  todos.append(text)
+  todos[last_id] = text
+  last_id += 1
   return redirect('/')
 
 
 @app.route('/remove', methods=['POST'])
 def remove_todo():
-  text = request.form['todo_text']
-  todos.remove(text)
+  id = int(request.form['todo_id'])
+  if id in todos:
+    del todos[id]
   return redirect('/')
 
 
 @app.route('/')
-def root():
-  return render_template('index.html', todos=reversed(todos))
+def index():
+  return render_template('index.html', todos=reversed(todos.items()))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
   app.run(debug=True)
