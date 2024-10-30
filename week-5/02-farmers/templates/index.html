@@ -8,11 +8,29 @@
       body {
         font-family: Arial, Helvetica, sans-serif;
       }
+
+      form {
+        margin: 10px;
+        padding: 10px;
+        border: 2px solid orange;
+        border-radius: 10px;
+      }
     </style>
   </head>
   <body>
     <h1>welcome to farmers' app</h1>
     <h2>products table:</h2>
+    <form action="/add-product" method="post">
+      <label>
+        name:
+        <input type="text" name="name" value="kiwi" />
+      </label>
+      <label>
+        type:
+        <input type="text" name="type" value="fruit" />
+      </label>
+      <input type="submit" value="Add product" />
+    </form>
     <table border="1">
       <tr>
         <th>#</th>
@@ -30,6 +48,25 @@
     </table>
 
     <h2>stocks table:</h2>
+    <form action="/add-stock" method="post">
+      <label>
+        product id:
+        <input type="text" name="product_id" value="2" />
+      </label>
+      <label>
+        qty:
+        <input type="text" name="qty" value="50" />
+      </label>
+      <label>
+        price:
+        <input type="text" name="price" value="20" />
+      </label>
+      <label>
+        expiry:
+        <input type="text" name="expiry" value="30" />
+      </label>
+      <input type="submit" value="Add stock" />
+    </form>
     <table border="1">
       <tr>
         <th>#</th>
