@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add student</title>
+  </head>
+  <body>
+    <a href="/">Go back</a>
+
+    <h1>Add a new student</h1>
+
+    <form action="/add/student" method="post">
+      <label>
+        Name:
+        <input type="text" name="name" />
+      </label>
+
+      <br />
+      <label>
+        Place:
+        <input type="text" name="place" />
+      </label>
+
+      <br />
+      <label>
+        Age:
+        <input type="text" name="age" />
+      </label>
+
+      <input type="submit" value="Add student" />
+    </form>
+  </body>
+</html>

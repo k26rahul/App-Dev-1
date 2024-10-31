@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>School Management</title>
+  </head>
+  <body>
+    <h1>Welcome to School Management App</h1>
+
+    <section>
+      <h2>List of students:</h2>
+      <table border="1">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Place</th>
+          <th>Age</th>
+        </tr>
+
+        {% for id, name, place, age in students %}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{name}}</td>
+          <td>{{place}}</td>
+          <td>{{age}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <a href="/add/student">Add a new student</a>
+    </section>
+
+    <section>
+      <h2>List of courses:</h2>
+      <table border="1">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Credits</th>
+        </tr>
+
+        {% for id, name, credits in courses %}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{name}}</td>
+          <td>{{credits}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <a href="/add/course">Add a new course</a>
+    </section>
+
+    <section>
+      <h2>List of enrolls:</h2>
+      <table border="1">
+        <tr>
+          <th>ID</th>
+          <th>Student ID</th>
+          <th>Course ID</th>
+          <th>Term</th>
+          <th>Year</th>
+        </tr>
+
+        {% for id, student_id, course_id, term, year in enrolls %}
+        <tr>
+          <td>{{id}}</td>
+          <td>{{student_id}}</td>
+          <td>{{course_id}}</td>
+          <td>{{term}}</td>
+          <td>{{year}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <a href="/add/enroll">Add a new enroll</a>
+    </section>
+  </body>
+</html>
