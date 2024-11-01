@@ -1,9 +1,7 @@
 from flask import Flask, request, render_template, redirect
-import sqlite3
+from models import conn, cur
 
 app = Flask(__name__)
-conn = sqlite3.connect('test.db', check_same_thread=False)
-cur = conn.cursor()
 
 
 @app.route('/')
