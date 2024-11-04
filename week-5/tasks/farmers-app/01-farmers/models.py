@@ -1,3 +1,6 @@
+""" bases on test2 """
+
+
 class Product:
   _idx = 1
 

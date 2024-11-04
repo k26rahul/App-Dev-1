@@ -1,6 +1,8 @@
 from flask import Flask, request, render_template, redirect
 
 app = Flask(__name__)
+
+""" model """
 mood_data = {
     'happy': 0,
     'sad': 0

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab 5</title>
+  </head>
+  <body>
+    <h1>List of students</h1>
+    {% if students|length == 0 %}
+    <p>No students found. Add students now!</p>
+    {% else %}
+    <table id="all-students" border="1">
+      <tr>
+        <th>SNo.</th>
+        <th>Roll no.</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Actions</th>
+      </tr>
+      {% for student in students %}
+      <tr>
+        <th>{{student.student_id}}</th>
+        <th>
+          <a href="#">{{student.roll_number}}</a>
+        </th>
+        <th>{{student.first_name}}</th>
+        <th>{{student.last_name}}</th>
+        <th>
+          <a href="#">Update</a>
+          <a href="#">Delete</a>
+        </th>
+      </tr>
+      {% endfor %}
+    </table>
+    {% endif %}
+    <a href="/student/create">Add student</a>
+  </body>
+</html>

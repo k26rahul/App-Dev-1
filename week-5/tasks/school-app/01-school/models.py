@@ -43,6 +43,7 @@ class Enroll:
     return f'<Enroll {self.student_id} {self.course_id}>'
 
 
+""" tables as dicts """
 students = {}
 courses = {}
 enrolls = {}

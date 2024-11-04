@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template, redirect
 from models import session, Student
+import populate_db
 
 app = Flask(__name__)
 

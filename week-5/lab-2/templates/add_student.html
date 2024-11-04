@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add student</title>
+  </head>
+  <body>
+    <h1>Add a student</h1>
+    <form action="/student/create" method="post" id="create-form">
+      <div>
+        <label>
+          Roll no:
+          <input type="text" name="roll" required />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          First name:
+          <input type="text" name="f_name" required />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Last name:
+          <input type="text" name="l_name" />
+        </label>
+      </div>
+
+      <div>
+        <label>Select courses:</label>
+        <label>
+          <input type="checkbox" name="courses" value="course_1" />
+          MAD 1
+        </label>
+
+        <label>
+          <input type="checkbox" name="courses" value="course_2" />
+          DBMS
+        </label>
+
+        <label>
+          <input type="checkbox" name="courses" value="course_3" />
+          PDSA
+        </label>
+
+        <label>
+          <input type="checkbox" name="courses" value="course_4" />
+          BDM
+        </label>
+      </div>
+
+      <div>
+        <input type="submit" value="Add student" />
+      </div>
+    </form>
+  </body>
+</html>
