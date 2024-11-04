@@ -20,16 +20,16 @@
       </tr>
       {% for student in students %}
       <tr>
-        <th>{{student.student_id}}</th>
-        <th>
-          <a href="#">{{student.roll_number}}</a>
-        </th>
-        <th>{{student.first_name}}</th>
-        <th>{{student.last_name}}</th>
-        <th>
+        <td>{{student.student_id}}</td>
+        <td>
+          <a href="/student/{{student.student_id}}">{{student.roll_number}}</a>
+        </td>
+        <td>{{student.first_name}}</td>
+        <td>{{student.last_name}}</td>
+        <td>
           <a href="#">Update</a>
           <a href="#">Delete</a>
-        </th>
+        </td>
       </tr>
       {% endfor %}
     </table>

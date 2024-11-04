@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student profile</title>
+  </head>
+  <body>
+    <h1>Profile of student {{ student.student_id }}</h1>
+    <table border="1">
+      <tr>
+        <th>Roll no.</th>
+        <th>First name</th>
+        <th>Last name</th>
+      </tr>
+
+      <tr>
+        <td>{{student.roll_number}}</td>
+        <td>{{student.first_name}}</td>
+        <td>{{student.last_name}}</td>
+      </tr>
+    </table>
+
+    <h1>Enrolls of student {{ student.student_id }}</h1>
+    <table border="1">
+      <tr>
+        <th>SNo.</th>
+        <th>Course code</th>
+        <th>Course name</th>
+        <th>Course description</th>
+      </tr>
+
+      {% for course in courses %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ course.course_code }}</td>
+        <td>{{ course.course_name }}</td>
+        <td>{{ course.course_description }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>

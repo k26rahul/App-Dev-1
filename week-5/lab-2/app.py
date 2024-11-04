@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, redirect
-from models import db, Student, Enroll
+from models import db, Student, Course, Enroll
 import populate_db
 
 app = Flask(__name__)
@@ -12,6 +12,25 @@ def index():
   # students = session.query(Student).all()
   students = Student.query.all()
   return render_template('index.html', students=students)
+
+
+@app.route('/student/<int:student_id>')
+def student_profile(student_id):
+  student = Student.query.filter_by(student_id=student_id).first()
+  # enrolls = Enroll.query.filter_by(estudent_id=student_id).all()
+  # courses = []
+  # for enroll in enrolls:
+  #   course = Course.query.filter_by(course_id=enroll.ecourse_id).first()
+  #   courses.append(course)
+  courses = (
+      Course.query
+      .join(Enroll, Enroll.ecourse_id == Course.course_id)
+      .filter(Enroll.estudent_id == student_id)
+      .all()
+  )
+  print(courses)
+
+  return render_template('student_profile.html', student=student, courses=courses)
 
 
 @app.route('/student/create', methods=['GET', 'POST'])
