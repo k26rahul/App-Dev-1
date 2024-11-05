@@ -30,12 +30,12 @@
         <th>Course description</th>
       </tr>
 
-      {% for course in courses %}
+      {% for enroll in student.enrolls %}
       <tr>
         <td>{{ loop.index }}</td>
-        <td>{{ course.course_code }}</td>
-        <td>{{ course.course_name }}</td>
-        <td>{{ course.course_description }}</td>
+        <td>{{ enroll.course.course_code }}</td>
+        <td>{{ enroll.course.course_name }}</td>
+        <td>{{ enroll.course.course_description }}</td>
       </tr>
       {% endfor %}
     </table>

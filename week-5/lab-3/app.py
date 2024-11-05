@@ -1,7 +1,6 @@
 from flask import Flask
 from models import db
-from routes.root_bp import root_bp
-from routes.student_bp import student_bp
+from routes import root_bp, student_bp
 import populate_db
 
 
@@ -14,13 +13,14 @@ def create_app():
   app.register_blueprint(student_bp)
 
   # database setup
-  app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///'
+  app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
   db.init_app(app)
 
   # make db tables and populate
   with app.app_context():
-    db.create_all()
-    populate_db.populate()
+    ...
+    # db.create_all()
+    # populate_db.populate()
 
   return app
 
