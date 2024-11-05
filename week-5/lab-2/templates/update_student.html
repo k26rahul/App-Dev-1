@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Update student</title>
+  </head>
+  <body>
+    <h1>Update details of student {{student.student_id}}</h1>
+    <form action="/student/{{student.student_id}}/update" method="post" id="update-form">
+      <div>
+        <label>
+          Roll no:
+          <input type="text" name="roll" value="{{student.roll_number}}" required />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          First name:
+          <input type="text" name="f_name" value="{{student.first_name}}" required />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Last name:
+          <input type="text" name="l_name" value="{{student.last_name}}" />
+        </label>
+      </div>
+
+      <div>
+        <label>Select courses:</label>
+        <label>
+          <input type="checkbox" name="courses" value="course_1" {% if taken.1 %}checked{% endif %} />
+          MAD 1
+        </label>
+
+        <label>
+          <input type="checkbox" name="courses" value="course_2" {% if taken.2 %}checked{% endif %} />
+          DBMS
+        </label>
+
+        <label>
+          <input type="checkbox" name="courses" value="course_3" {% if taken.3 %}checked{% endif %} />
+          PDSA
+        </label>
+
+        <label>
+          <input type="checkbox" name="courses" value="course_4" {% if taken.4 %}checked{% endif %} />
+          BDM
+        </label>
+      </div>
+
+      <div>
+        <input type="submit" value="Update student" />
+      </div>
+    </form>
+  </body>
+</html>

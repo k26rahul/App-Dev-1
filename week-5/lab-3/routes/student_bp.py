@@ -1,20 +1,10 @@
-from flask import Flask, request, render_template, redirect
-from models import db, Student, Course, Enroll
-import populate_db
+from flask import Blueprint, request, render_template, redirect
+from models import *
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.sqlite3'
-db.init_app(app)
+student_bp = Blueprint('student', __name__)
 
 
-@app.route('/')
-def index():
-  # students = session.query(Student).all()
-  students = Student.query.all()
-  return render_template('index.html', students=students)
-
-
-@app.route('/student/<int:student_id>')
+@student_bp.route('/student/<int:student_id>')
 def student_profile(student_id):
   student = Student.query.filter_by(student_id=student_id).first()
   # enrolls = Enroll.query.filter_by(estudent_id=student_id).all()
@@ -32,7 +22,7 @@ def student_profile(student_id):
   return render_template('student_profile.html', student=student, courses=courses)
 
 
-@app.route('/student/create', methods=['GET', 'POST'])
+@student_bp.route('/student/create', methods=['GET', 'POST'])
 def add_student():
   if request.method == 'GET':
     return render_template('add_student.html', error=False)
@@ -60,7 +50,7 @@ def add_student():
     return redirect('/')
 
 
-@app.route('/student/<int:student_id>/update', methods=['GET', 'POST'])
+@student_bp.route('/student/<int:student_id>/update', methods=['GET', 'POST'])
 def update_student(student_id):
   student = Student.query.filter_by(student_id=student_id).first()
   if request.method == 'GET':
@@ -99,17 +89,10 @@ def update_student(student_id):
     return redirect('/')
 
 
-@app.route('/student/<int:student_id>/delete')
+@student_bp.route('/student/<int:student_id>/delete')
 def delete_student(student_id):
+  # db.session.query(Student).filter_by(student_id=student_id).delete()
   Student.query.filter_by(student_id=student_id).delete()
   Enroll.query.filter_by(estudent_id=student_id).delete()
   db.session.commit()
   return redirect('/')
-
-
-if __name__ == '__main__':
-  with app.app_context():
-    ...
-    # db.create_all()
-    # populate_db.populate()
-  app.run(debug=True)
