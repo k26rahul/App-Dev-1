@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>wiki-search-app</title>
+    <style>
+      form div {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>welcome to wiki-search-app</h1>
+    <form action="/search">
+      <div>
+        <label>
+          What to search?:
+          <input type="text" name="what_to_search" />
+        </label>
+      </div>
+      <div>
+        <label>
+          How many results?:
+          <input type="text" name="how_many_results" />
+        </label>
+      </div>
+      <div>
+        <input type="submit" value="Search on Wiki" />
+      </div>
+    </form>
+  </body>
+</html>

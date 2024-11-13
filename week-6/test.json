@@ -1,0 +1,31 @@
+[
+  {
+    // keys as strings: values can be strings/int/bool/null/dict/array
+    "name": "rahul",
+    "class": 12,
+    "is_boy": null,
+    "hobbies": ["reading", "swimming"],
+    "address": { "city": "bhadohi", "locality": "my village", "pin_code": "165521" },
+    "parents": { "father": "...", "mother": "...." },
+    "contacts": ["...", "..."]
+  },
+  {
+    // keys as strings: values can be strings/int/bool/null/dict/array
+    "name": "vidu",
+    "class": 12,
+    "is_boy": null,
+    "hobbies": ["reading", "swimming"],
+    "address": {
+      "city": "bhadohi",
+      "locality": "my village",
+      "pin_code": "165521"
+    },
+    "parents": {
+      "father": "...",
+      "mother": "...."
+    },
+    "contacts": ["...", "..."]
+  }
+]
+
+// i am <rahul>, i study in class <12>, i am a boy <true>, ...
