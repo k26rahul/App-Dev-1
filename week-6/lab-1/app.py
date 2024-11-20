@@ -26,7 +26,6 @@ ERROR_CODES = {
     # general
     "RESOURCE_ALREADY_EXISTS": "Resource already exists",
     "RESOURCE_NOT_FOUND": "Resource not found",
-    "MISSING_REQUIRED_FIELDS": "Missing required fields",
     "BAD_REQUEST": "Bad Request"
 }
 
