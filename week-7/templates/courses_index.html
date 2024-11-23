@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/">Go to students</a>
+    <h1>All courses</h1>
+    <table border="1">
+      <tr>
+        <th>SNo.</th>
+        <th>Course name</th>
+        <th>Course code</th>
+        <th>Course description</th>
+        <th>Actions</th>
+      </tr>
+      {% for course in courses %}
+      <tr>
+        <td>{{course.id}}</td>
+        <td>{{course.name}}</td>
+        <td>
+          <a href="/course/{{course.id}}">{{course.code}} ↪</a>
+        </td>
+        <td>{{course.description}}</td>
+        <td>
+          <a href="/course/{{course.id}}/update">Update</a>
+          <a href="/course/{{course.id}}/delete">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="/course/create">Add course</a>
+  </body>
+</html>

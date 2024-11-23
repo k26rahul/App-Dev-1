@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form div {
+        margin-bottom: 10px;
+      }
+
+      form {
+        border: 2px solid #333;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/">Go back</a>
+    <h1>Add student</h1>
+    <form action="/student/create" method="post">
+      <div>
+        <label>
+          Roll number
+          <input type="text" name="roll_number" />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          First name
+          <input type="text" name="first_name" />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Last name
+          <input type="text" name="last_name" />
+        </label>
+      </div>
+
+      <div>
+        {% for course in courses %}
+        <label>
+          <input type="checkbox" value="{{course.id}}" name="courses" />
+          {{course.name}}
+        </label>
+        {% endfor %}
+      </div>
+
+      <div>
+        <input type="submit" value="Add" />
+      </div>
+    </form>
+  </body>
+</html>

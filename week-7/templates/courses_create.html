@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form div {
+        margin-bottom: 10px;
+      }
+
+      form {
+        border: 2px solid #333;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="/courses">Go back</a>
+    <h1>Add course</h1>
+    <form action="/course/create" method="post">
+      <div>
+        <label>
+          Name
+          <input type="text" name="name" />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Code
+          <input type="text" name="code" />
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Description
+          <input type="text" name="description" />
+        </label>
+      </div>
+
+      <div>
+        <input type="submit" value="Add" />
+      </div>
+    </form>
+  </body>
+</html>

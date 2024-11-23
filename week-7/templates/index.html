@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="/courses">Go to courses</a>
+    <h1>All students</h1>
+    <table border="1">
+      <tr>
+        <th>SNo.</th>
+        <th>Roll number</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Actions</th>
+      </tr>
+      {% for student in students %}
+      <tr>
+        <td>{{student.id}}</td>
+        <td>
+          <a href="/student/{{student.id}}">{{student.roll_number}} ↪</a>
+        </td>
+        <td>{{student.first_name}}</td>
+        <td>{{student.last_name}}</td>
+        <td>
+          <a href="/student/{{student.id}}/update">Update</a>
+          <a href="/student/{{student.id}}/delete">Delete</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="/student/create">Add student</a>
+  </body>
+</html>
