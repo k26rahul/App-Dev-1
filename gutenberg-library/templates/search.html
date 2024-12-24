@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>
+      Results for your search of author:
+      <span style="color: red">{{author}}</span>, title: <span style="color: red">{{title}}</span>
+    </h1>
+    <ul>
+      {% for book in data.results %} {% if 'text/html' in book.formats %}
+      <li>
+        <a href="{{book.formats['text/html']}}">{{book.title}}</a>
+        <ul>
+          {% for author in book.authors %}
+          <li>{{author.name}} ({{author.birth_year}} ~ {{author.death_year}})</li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endif %} {% endfor %}
+    </ul>
+  </body>
+</html>

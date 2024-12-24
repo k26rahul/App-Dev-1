@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gutenberg Library</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+
+      form {
+        padding: 20px;
+        display: inline-block;
+        border: 2px solid #333;
+        border-radius: 5px;
+      }
+
+      form div {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Gutenberg Library</h1>
+
+    <form action="/search">
+      <div>
+        <label>
+          Author:
+          <input type="text" name="author" value="Charles Dickens" />
+        </label>
+      </div>
+      <div>
+        <label>
+          Title:
+          <input type="text" name="title" value="Great Expectations" />
+        </label>
+      </div>
+      <div>
+        <input type="submit" value="Search" />
+      </div>
+    </form>
+
+    <ul>
+      <li>Total books in library: {{data.count}}</li>
+      <li>You are at page: {{page}}</li>
+      <li>
+        <a href="/?page={{page+1}}">➡️ Go to next page</a>
+      </li>
+      <li>
+        <a href="/?page={{page-1}}">⬅️ Go to previous page</a>
+      </li>
+    </ul>
+
+    <h2>List of all books (ordered by popularity)</h2>
+    <ul>
+      {% for book in data.results %}
+      <li>
+        <a href="{{book.formats['text/html']}}">{{book.title}}</a>
+        <ul>
+          {% for author in book.authors %}
+          <li>{{author.name}} ({{author.birth_year}} ~ {{author.death_year}})</li>
+          {% endfor %}
+        </ul>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
