@@ -1,0 +1,84 @@
+⭐
+__name__ :- import name
+
+⭐
+why __name__ == __main__ :-
+  1. main file, everything imported and initialized here
+  2. run directly from terminal
+  3. nobody imports app.py
+
+⭐
+dob = Column(Date, nullable=False)
+             ^^^ it's `type` of Column
+
+⭐
+Date :- to store date (yyyy, mm, dd) only
+Datetime :- to store date + time both (yyyy, mm, dd, hh, mm, ss)
+
+⭐
+from datetime import datetime
+     ^ module        ^ class
+new_year = datetime(2025, 1, 1, 0, 0, 0)
+           ^ directly use the imported class
+
+⭐
+import datetime
+       ^ import complete module
+new_year = datetime.datetime(2025, 1, 1, 0, 0, 0)
+                    ^ use this class of imported module
+                    ! datetime.datetime() vs datetime()
+
+⭐
+mapping in CS:
+'rahul' > 5
+'vidu' > 4
+'cmd' > 3
+
+in code: ['rahul', 'vidu', 'cmd'] > [5, 4, 3]
+in code: ['12', '10', '4'] > [12, 10, 4]
+
+⭐
+(outsiders?) authentication: everybody has a ID card in school, outsiders not allowed
+(permit to enter some room?) authorization: roles of principal, staff, teachers, students
+
+⭐ in routes/__init__.py:
+from .root_bp import root_bp
+     ^ this dot (.) means same folder as __init__.py
+
+[this was done for `from routes import root_bp, auth_bp,...` in app.py]
+     
+⭐ why relationship(..., uselist=False)?
+User: NOT knows related admin.id/customer.id (possibly many of them could be related)
+Admin: knows user.id (exactly 1 user)
+
+by default this means: 👇
+user.admin = [<Admin>, ...]
+admin.user = <User>
+
+if we do `uselist=False` for `user.admin relationship`: 👇
+user.admin = <Admin>
+admin.user = <User>
+
+ALTERNATIVE EXAMPLE:
+
+Father: id, name
+Child: id, name, father_id
+
+Naturally like this:
+1. father knows nothing about childs: `father.child = [<Child>, ...]` <<< 🤔
+2. but child knows his father: `child.father = <Father>`
+
+If we wanna do 1-to-1 Father-Child relationship:
+Father: id, name (child relationship uselist=False) <<< 😍
+Child: id, name, father_id
+
+1. father knows nothing about childs: `father.child = <Child>` <<< 😍
+2. but child knows his father: `child.father = <Father>`
+
+⭐ gist of uselist=False
+
+1. by default relationship are 1-to-many
+     🤔 which side is 1, and many?
+          the entity that keeps foreign key is on '1 side', other entity on 'many side'
+
+2. by doing uselist=False, we enforce 1-to-1 relationship

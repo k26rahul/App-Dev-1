@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postbook</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        form div {
+            margin-bottom: 10px;
+        }
+
+        form {
+            border: 2px solid #333;
+            border-radius: 5px;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .posts-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .post {
+            flex-grow: 1;
+            border: 2px solid red;
+            border-radius: 5px;
+            padding: 10px;
+            max-width: 400px;
+        }
+    </style>
+  </head>
+  <body>
+    <a href="/logout">Logout</a>
+    <h1 style='text-align: center;'>
+      Hello {{ current_user.name }}, welcome to Postbook!
+    </h1>
+    <form action="/create-post" method='post'>
+      <div>
+        <label>
+          Write here:
+          <input type="text" name='body'>
+        </label>
+      </div>
+
+      <div>
+        <input type="submit" value="Post it!">
+      </div>
+    </form>
+
+    <section>
+      <h2>All posts by all users:</h2>
+      <div class='posts-container'>
+        {% for post in posts %}
+          <div class='post'>
+            <p>{{ post.user.name }}</p>
+            <p>{{ post.body }}</p>
+
+            {% if check_if_liked(post) %}
+              <a href="/unlike/{{ post.id }}">Unlike</a>
+            {% else %}
+              <a href="/like/{{ post.id }}">Like</a>
+            {% endif %}
+
+            Total {{ count_likes(post) }} likes
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+  </body>
+</html>

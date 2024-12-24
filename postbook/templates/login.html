@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        form div {
+            margin-bottom: 10px;
+        }
+
+        form {
+            border: 2px solid #333;
+            border-radius: 5px;
+            padding: 20px;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+    </style>
+  </head>
+  <body>
+    <h1>Please login</h1>
+    <form action="/login" method='post'>
+      {% if error %}
+        <div style='text-align: center; color: red;'>
+          Invalid email or password, try again!
+        </div>
+      {% endif %}
+
+      <div>
+        <label>
+          Email:
+          <input type="text" name="email" required>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Password:
+          <input type="password" name="password" required>
+        </label>
+      </div>
+
+      <input type="submit" value='Submit'>
+    </form>
+  </body>
+</html>
