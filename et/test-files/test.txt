@@ -1,0 +1,3 @@
+span (tag, class, id)
+span (tag, class)
+span (tag)

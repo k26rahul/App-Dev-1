@@ -1,0 +1,19 @@
+def fn(x, y):
+  return x**2 + y**2
+
+
+def greet(hello_word, name):
+  return f'{hello_word} {name}'
+
+
+assert greet('hello', 'vidu') == 'hello vidu'
+assert greet('hello', 'rahul') == 'hello rahul'
+assert greet('namaste', 'rahul') == 'namaste rahul'
+assert greet('hi', 'rahul') == ...
+assert greet('hey', 'rahul') == ...
+assert greet('hey', 'vidu') == ...
+
+
+assert fn(1, 1) == ...
+assert fn(1, 1) == ...
+assert fn(1, 1) == ...
